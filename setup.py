@@ -17,6 +17,11 @@ class PackageInfo:
   @staticmethod
   def get_dependencies() -> List[str]:
     """Returns dependency list if it is exists in given path"""
+    if "requirements.txt" in os.listdir(os.path.abspath("./")):
+      with open(os.path.abspath("./requirements.txt"), "r") as dep:
+        dependency_list = dep.readlines()
+        return list(map(lambda x: x.replace("\n", ""), dependency_list))
+
     return [""]
 
 
@@ -34,10 +39,10 @@ class PackageInfo:
     cls.author_email = "egesabanci@outlook.com.tr"
     cls.description = "Easy to use command line deployer for smart contracts."
     cls.long_description = cls.get_readme()
-    cls.licence = "MIT"
+    cls.license = "MIT"
     cls.name = "warfle"
     cls.version = "0.0.1"
-    cls.packages = find_packages() + cls.get_dependencies()
+    cls.packages = find_packages()
     cls.entry_points = dict(console_scripts = cls.get_console_scripts())
 
     return cls
@@ -45,9 +50,15 @@ class PackageInfo:
 
 if __name__ == "__main__":
   package = PackageInfo.get_package()
-
+   
   setup(
+    author = package.author,
+    author_email = package.author_email,
+    description = package.description,
+    long_description = package.long_description,
+    license = package.license,
     name = package.name,
     version = package.version,
-    packages = package.packages
+    packages = package.packages,
+    entry_points = package.entry_points,
   )

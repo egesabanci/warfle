@@ -1,2 +1,1 @@
-hello world
-hi everyone
+warfle = warfle.cli.main:main
