@@ -1,6 +1,13 @@
 import os
+import json
 from pathlib import Path
 from termcolor import colored
+
+
+def read_config_file():
+  config_path = os.path.join(Path(__file__).parent, f"./config.json")
+  with open(config_path, "r") as config_file:
+    return json.loads(config_file.read())
 
 
 def create_path(file: str) -> str:
