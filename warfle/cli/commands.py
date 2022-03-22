@@ -19,7 +19,7 @@ def init() -> None:
     public_key = input("Enter your public key: ")
     config_file["public"] = public_key
 
-    with open(target_path, "a") as config:
+    with open(target_path, "w") as config:
       config.write(json.dumps(config_file))
       
     stdout = create_path("./texts/init.warfle")
