@@ -1,5 +1,6 @@
 import os
 import json
+from web3 import Web3
 
 from warfle.cli.utils import (
   color_print,
@@ -65,6 +66,43 @@ def update(key: str, value: str) -> None:
     info = create_path("./texts/config-update-success.warfle")
     color_print(info, color = "green", attrs = ["reverse"])
 
+    return None
+
+  except Exception as e:
+    raise Exception(e)
+
+
+def deploy(abi: str, bytecode: str) -> None:
+  """Deploys contract with the given credentials in .warfle config file"""
+
+  try:
+    if ".warfle" not in os.listdir("./"):
+      err = create_path("./texts/no-warfle.warfle")
+      color_print(err, color = "red")
+      return None
+
+    with open(abi, "r") as abi_file:
+      contract_abi = abi_file.read()
+    
+    with open(bytecode, "r") as bytecode_file:
+      contract_bytecode = bytecode_file.read()
+
+    with open("./.warfle", "r") as config_file:
+      config = json.loads(config_file.read())
+
+    provider = Web3(Web3.HTTPProvider(config["rpc"]))
+    provider.eth.default_account = config["public"]
+
+    contract = provider.eth.contract(
+      abi = contract_abi,
+      bytecode = contract_bytecode
+    )
+
+    transaction_hash = contract.constructor().transact()
+    transaction_receipt = provider.eth.wait_for_transaction_receipt(transaction_hash)
+
+    print(transaction_receipt)
+    
     return None
 
   except Exception as e:

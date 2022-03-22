@@ -6,7 +6,8 @@ def main() -> None:
   Fire(dict(
     init = init,
     compile = compile,
-    update = update
+    update = update,
+    deploy = deploy
   ))
   
   return None

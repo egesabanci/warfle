@@ -30,7 +30,7 @@ def save_compiled_source(filepath: str) -> None:
     compiled_source = compile_solidity(filepath)
     id, interface = compiled_source.popitem()
     
-    bytecode = json.dumps(interface["bin"])
+    bytecode = interface["bin"]
     abi = json.dumps(interface["abi"])
 
     if "source" not in os.listdir("./"):

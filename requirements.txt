@@ -1,3 +1,11 @@
+certifi==2021.10.8
+charset-normalizer==2.0.12
 fire==0.4.0
+idna==3.3
+py-solc-x==1.1.1
+requests==2.27.1
+semantic-version==2.9.0
 six==1.16.0
 termcolor==1.1.0
+urllib3==1.26.9
+-e git+git@github.com:egesabanci/warfle.git@c6c48243b3bbc7db743e58deab7a327867a06045#egg=warfle
