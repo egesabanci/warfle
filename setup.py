@@ -20,8 +20,9 @@ class PackageInfo:
     if "requirements.txt" in os.listdir(os.path.abspath("./")):
       with open(os.path.abspath("./requirements.txt"), "r") as dep:
         dependency_list = dep.readlines()
-        return list(map(lambda x: x.replace("\n", ""), dependency_list))
-
+        all_dependencies = list(map(lambda x: x.replace("\n", ""), dependency_list))
+        return list(map(lambda x: x[:x.index("=")], all_dependencies)).append("warfle")
+        
     return [""]
 
 
@@ -43,6 +44,7 @@ class PackageInfo:
     cls.name = "warfle"
     cls.version = "0.0.1"
     cls.packages = find_packages()
+    cls.install_requires = cls.get_dependencies()
     cls.entry_points = dict(console_scripts = cls.get_console_scripts())
 
     return cls
@@ -60,5 +62,6 @@ if __name__ == "__main__":
     name = package.name,
     version = package.version,
     packages = package.packages,
+    install_requires = package.install_requires,
     entry_points = package.entry_points,
   )
