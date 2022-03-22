@@ -4,7 +4,9 @@ from warfle.cli.commands import *
 
 def main() -> None:
   Fire(dict(
-    init = init
+    init = init,
+    compile = compile,
+    update = update
   ))
   
   return None

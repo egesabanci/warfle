@@ -7,6 +7,8 @@ from warfle.cli.utils import (
   read_config_file
 )
 
+from warfle.compiler.compile import save_compiled_source
+
 
 def init() -> None:
   """Creates .warfle file for store configurations"""
@@ -29,3 +31,39 @@ def init() -> None:
     raise Exception(e)
     
   return None
+
+
+def compile(file: str) -> None:
+  """Compiles and saves the source code to the ./source"""
+
+  save_compiled_source(file)
+  return None
+
+
+def update(key: str, value: str) -> None:
+  try:
+    if ".warfle" not in os.listdir("./"):
+      err = create_path("./texts/no-warfle.warfle")
+      color_print(err, color = "red")
+      return None
+
+    with open("./.warfle", "r") as config_file:
+      config = json.loads(config_file.read())
+
+    if not key in list(config.keys()):
+      err = create_path("./texts/no-key.warfle")
+      color_print(err, color = "red")
+      return None
+      
+    config[key] = value
+
+    with open("./.warfle", "w") as config_file:
+      config_file.write(json.dumps(config))  
+     
+    info = create_path("./texts/config-update-success.warfle")
+    color_print(info, color = "green", attrs = ["reverse"])
+
+    return None
+
+  except Exception as e:
+    raise Exception(e)
