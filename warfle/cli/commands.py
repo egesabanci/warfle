@@ -41,6 +41,8 @@ def compile(file: str) -> None:
 
 
 def update(key: str, value: str) -> None:
+  """Updates .warfle config file if it is exists in the current folder"""
+
   try:
     if ".warfle" not in os.listdir("./"):
       err = create_path("./texts/no-warfle.warfle")
