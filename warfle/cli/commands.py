@@ -24,13 +24,13 @@ def init() -> None:
     with open(target_path, "w") as config:
       config.write(json.dumps(config_file))
       
-    stdout = create_path("./texts/init.warfle")
-    color_print(stdout, color = "green", attrs = ["reverse"])
+    info = create_path("./texts/init.warfle")
+    color_print(info, color = "green", attrs = ["reverse"])
+    return None
 
   except Exception as e:
     raise Exception(e)
     
-  return None
 
 
 def compile(file: str) -> None:

@@ -2,7 +2,6 @@ import os
 import json
 
 from solcx import compile_source
-from warfle.cli.utils import color_print, create_path
 
 
 def compile_solidity(filepath: str):
