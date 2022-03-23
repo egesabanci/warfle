@@ -71,7 +71,7 @@ If we want to update the configurations, We can simple use the ``warfle update``
 
 **Example usage:**
 ```
->>> warfle update KEY VALUE
+>>> warfle update KEY
 ```
 ``key`` argument must be ``rpc`` or ``public``. You can not add any other argument to the ``.warfle`` configuration file.
 
