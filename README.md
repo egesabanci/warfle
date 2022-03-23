@@ -26,7 +26,7 @@ Install from the with the ``setup`` file of the project:
 # Example Usage
 Let's say, we have a following smart contract:
 
-```sol
+```solidity
 // Test.sol
 
 pragma solidity >=5.0.1;
