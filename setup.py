@@ -19,11 +19,11 @@ class PackageInfo:
   def get_dependencies() -> List[str]:
     """Returns dependency list if it is exists in given path"""
     
-    if "requirements.txt" in os.listdir(os.path.abspath("./")):
-      with open(os.path.abspath("./requirements.txt"), "r") as dep:
+    if "requirements.txt" in os.listdir():
+      with open("./requirements.txt", "r") as dep:
         dependency_list = dep.readlines()
         all_dependencies = list(map(lambda x: x.replace("\n", ""), dependency_list))
-        return list(map(lambda x: x[:x.index("=")], all_dependencies)).append("warfle")
+        return all_dependencies
         
     return [""]
 
