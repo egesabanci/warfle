@@ -2,7 +2,16 @@
   <img src = "https://raw.githubusercontent.com/egesabanci/warfle/master/assets/warfle-logo.png?token=GHSAT0AAAAAABMKUTO2SAO7QKJK6OBB5EHGYSED6IA" />
 </div>
 
-<div style = "display: flex;">
+<div>
+  <img src = "https://img.shields.io/pypi/l/warfle-deploy-cli" />
+  <img src = "https://img.shields.io/pypi/v/warfle-deploy-cli" />
+  <img src = "https://img.shields.io/github/stars/egesabanci/warfle?style=social" />
+  <img src = "https://img.shields.io/github/watchers/egesabanci/warfle?style=social" />
+  <img src = "https://img.shields.io/github/languages/code-size/egesabanci/warfle?style=social" />
+  <img src = "https://img.shields.io/github/repo-size/egesabanci/warfle?style=social" />
+</div>
+
+<div>
   <img src = "https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue" />
   <img src = "https://img.shields.io/badge/Solidity-e6e6e6?style=for-the-badge&logo=solidity&logoColor=black" />
 </div>
