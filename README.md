@@ -92,5 +92,5 @@ In our case:
 >>> warfle deploy source/Test.abi source/Test.bin
 ```
 
-# LICENSE
+# License
 [MIT](https://github.com/egesabanci/warfle/blob/master/LICENSE.md) © Ege Sabanci egesabanci@outlook.com.tr
