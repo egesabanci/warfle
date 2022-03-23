@@ -68,9 +68,6 @@ This command will create a ``.warfle`` configuration file to the current path. `
 
 ###### Step 2 (Optional):
 If we want to update the configurations, We can simple use the ``warfle update`` command.
-
-
-**Example usage:**
 ```
 >>> warfle update KEY
 ```
