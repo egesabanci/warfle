@@ -46,7 +46,7 @@ class PackageInfo:
     cls.long_description = cls.get_readme()
     cls.long_description_content_type = "text/markdown"
     cls.license = "MIT"
-    cls.name = "warfle"
+    cls.name = "warfle-deploy-cli"
     cls.version = "1.0.0"
     cls.packages = find_packages()
     cls.install_requires = cls.get_dependencies()
