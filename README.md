@@ -14,6 +14,13 @@ Warfle is an easy-to-use command-line interface for deploying smart contracts wi
 In the current version, ``Warfle does not supports the public mainnet or testnet deployment`` but in the further versions, We will add this feature.
 
 # Installation
+###### Option 1 (recommended):
+Install from PYPI via ``pip``:
+```
+>>> pip install warfle-deploy-cli
+```
+
+###### Option 2:
 Install from the with the ``setup`` file of the project:
 ```
 >>> git clone https://www.github.com/egesabanci/warfle
