@@ -1,4 +1,4 @@
-<div align = "center" style = "width: 350px;">
+<div align = "center" width = "300">
   <img src = "https://raw.githubusercontent.com/egesabanci/warfle/master/assets/warfle-logo.png?token=GHSAT0AAAAAABMKUTO3VF6MWN2URV45XEX2YSEBSDA">
 </div>
 <div>
