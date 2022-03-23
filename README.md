@@ -1,5 +1,9 @@
-<div style = "width: 100vw; display: flex; align-items: center; justify-content: center;">
+<div align = "center" style = "width: 350px;">
   <img src = "https://raw.githubusercontent.com/egesabanci/warfle/master/assets/warfle-logo.png?token=GHSAT0AAAAAABMKUTO3VF6MWN2URV45XEX2YSEBSDA">
+</div>
+<div>
+  <img src = "https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue">
+  <img src = "https://img.shields.io/badge/Solidity-e6e6e6?style=for-the-badge&logo=solidity&logoColor=black">
 </div>
 
 # Overview
