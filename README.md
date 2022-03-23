@@ -68,6 +68,8 @@ This command will create a ``.warfle`` configuration file to the current path. `
 
 ###### Step 2 (Optional):
 If we want to update the configurations, We can simple use the ``warfle update`` command.
+
+**Example usage:**
 ```
 >>> warfle update KEY
 ```
@@ -75,6 +77,8 @@ If we want to update the configurations, We can simple use the ``warfle update``
 
 ###### Step 3:
 Then, We need to compile our smart contract with the ``warfle compile`` command. This command will create a new ``source`` folder to the current path. ``./source`` will contains 2 files: ``ABI of the contract (*.abi)`` and ``Bytecode of the contract (*.bin)``. In our case, ``./source`` will contains: ``Test.abi`` and ``Test.bin``:
+
+
 **Example usage:**
 ```
 >>> warfle compile Test.sol
