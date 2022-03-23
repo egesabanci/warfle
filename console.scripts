@@ -1,1 +1,1 @@
-warfle = warfle.cli.main:main
+warfle = warfle:main

@@ -5,9 +5,8 @@ from termcolor import colored
 
 
 def read_config_file():
-  config_path = os.path.join(Path(__file__).parent, f"./config.json")
-  with open(config_path, "r") as config_file:
-    return json.loads(config_file.read())
+  config_content = '{"rpc": "http://127.0.0.1:7545", "public": ""}'
+  return json.loads(config_content)
 
 
 def create_path(file: str) -> str:

@@ -1,0 +1,1 @@
+from warfle.main import main

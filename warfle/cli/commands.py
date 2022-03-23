@@ -2,13 +2,13 @@ import os
 import json
 from web3 import Web3
 
-from warfle.cli.utils import (
+from .utils import (
   color_print,
   create_path,
   read_config_file
 )
 
-from warfle.compiler.compile import save_compiled_source
+from ..compiler.compile import save_compiled_source
 
 
 def init() -> None:
@@ -41,7 +41,7 @@ def compile(file: str) -> None:
   return None
 
 
-def update(key: str, value: str) -> None:
+def update(key: str) -> None:
   """Updates .warfle config file if it is exists in the current folder"""
 
   try:
@@ -50,17 +50,18 @@ def update(key: str, value: str) -> None:
       color_print(err, color = "red")
       return None
 
-    with open("./.warfle", "r") as config_file:
+    with open("./.warfle", "r", encoding = "UTF-8") as config_file:
       config = json.loads(config_file.read())
 
     if not key in list(config.keys()):
       err = create_path("./texts/no-key.warfle")
       color_print(err, color = "red")
       return None
-      
+    
+    value = str(input("Enter value: "))
     config[key] = value
 
-    with open("./.warfle", "w") as config_file:
+    with open("./.warfle", "w", encoding = "UTF-8") as config_file:
       config_file.write(json.dumps(config))  
      
     info = create_path("./texts/config-update-success.warfle")

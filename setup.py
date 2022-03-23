@@ -50,6 +50,8 @@ class PackageInfo:
     cls.version = "1.0.0"
     cls.packages = find_packages()
     cls.install_requires = cls.get_dependencies()
+    cls.include_package_data = True
+    cls.package_data = {"texts": ["*"]}
     cls.entry_points = dict(console_scripts = cls.get_console_scripts())
     cls.classifiers = [
       "License :: OSI Approved :: MIT License",
@@ -77,4 +79,6 @@ if __name__ == "__main__":
     install_requires = package.install_requires,
     entry_points = package.entry_points,
     classifiers = package.classifiers,
+    include_package_data = package.include_package_data,
+    package_data = package.package_data
   )
